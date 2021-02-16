@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title%} Login Page {% endblock%}
+
+{% block heading %}
+    <h3 class="text-center pt-5">Log in or <a href="/Register">create an account</a></h3>
+{% endblock %}
+
+
+{% block body %}
+    <form action="/Login" method="post">
+        <div class="form-group row pt-4">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <div class="py-2">
+                    <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text"/> 
+                </div>
+                <div class="py-2">
+                    <input class="form-control" name="password" placeholder="Password" type="password"/>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center">
+            <button class="btn btn-primary" type="submit">Log In</button>
+        </div>
+    </form>
+{% endblock %} 

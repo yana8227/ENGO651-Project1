@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}Login or Register{% endblock %}
+
+{% block body %}
+    
+    <header class='container bg-light h-25 text-center'>
+        <h1 class="display-2 py-4">Book Reviews</h1>
+    </header>
+    <nav class='navbar navbar-expand bg-dark navbar-dark justify-content-center'>
+            <a class="btn btn-primary mr-4" href="{{ url_for('Login') }}" role="button" > Log in </a>
+            <a class="btn btn-primary ml-4" href="{{ url_for('Register') }}" role="button" > Register </a>
+    </nav>
+    
+{% endblock %}    

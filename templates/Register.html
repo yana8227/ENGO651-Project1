@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %} Register Page{% endblock %}
+
+{% block heading %}
+    <h3 class="text-center pt-5">Create your account</h3>
+{% endblock %}
+
+{% block body %}
+    <form action="/Register" method="post">
+        <div class="form-group row pt-4">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <div class="py-2">
+                    <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text"/> 
+                </div>
+                <div class="py-2">
+                    <input class="form-control" name="password" placeholder="Password" type="password"/>
+                </div>
+                <div class="py-2">
+                    <input class="form-control" name="confirm" placeholder="Confirm password" type="password"/>
+                </div> 
+            </div>
+        </div>
+        <div class="col text-center">
+            <button class="btn btn-primary" type="submit">Register</button>
+        </div>
+    </form>
+{% endblock %}    
+
+
+

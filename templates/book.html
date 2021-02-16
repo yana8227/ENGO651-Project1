@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title%} Book Info {% endblock%}
+
+{% block body %}
+    <div class='bg-light container'>
+        <div class='float-left'><a href="{{url_for('search')}}">Home</a></div>
+        <div class='float-right'>{{username}}   <a href="{{url_for('logout')}}">   Log out</a></div>
+    </div>
+    <header class='container bg-light h-25 text-center'>
+        <div class="text-center pt-5">
+            <h1>Book: {{book_info[0].title}}</h1>
+            <h5>Author: {{book_info[0].author}}</h5>
+            <h5>Publish Date: {{book_info[0].year}}</h5>
+            <h5>ISBN: {{book_info[0].isbn}}</h5>
+        </div>
+    </header>
+    <br><nav class='navbar navbar-expand bg-dark navbar-dark  justify-content-center'> </nav>
+    <br><div class="dropdown-divider"></div><br>
+    <h5 class="text-center">Make a Review!<h5>
+    <div>
+        <form method="POST" class="form-border">
+            <div class="form-group row">
+                <div class="form-group col-lg-4"> </div>
+                <div class="form-group col-lg-4 text-center">
+                    <label for="rating">Rating</label>
+                    <select id="rating" name="rating" class="form-control" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option selected value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <div class="form-group pt-5">
+                        <div class="input-group text-center"">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Write a Comment</span>
+                            </div>
+                            <textarea name="comment" id="comment" class="form-control" rows="1" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <button class="btn btn-success" type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <br><div class="dropdown-divider"></div><br>
+        <div class="text-center pt-1">
+            <h3>User Reviews</h3>
+            {% for review in reviews %}
+            <div class="list-group pt-4">
+                <p><h5 class="mb-1" style="color:rgb(6, 45, 218)">{{review.username}} said:</h5>{{review.comment}}</p>
+                <small>Rated: {{review.rating}}</small>
+            </div>
+            {% endfor %}
+            <br><br><br><div class="dropdown-divider"></div>
+        </div>
+    </div>
+{% endblock %}  
