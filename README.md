@@ -1,6 +1,8 @@
-# Project 1 (video published at https://youtu.be/QR04g-ol9dU)
+# Project 1 
 
 ENGO 551
+
+video published at https://youtu.be/QR04g-ol9dU
 
 This is a book review web application. Its main functions containing registration, login, searching books by ISBN, author name, or book title (supports partial searching), get detailed info and past reviews of books, and writing reviews for books.
 
